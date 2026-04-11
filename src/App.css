@@ -1,0 +1,27 @@
+:root {
+  --cor-logo: #06151a;
+  --verde: #17EAB9;
+  --v-escuro: #091D24;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: var(--cor-logo);
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.banner {
+  background: linear-gradient(180deg, var(--verde) 0%, var(--v-escuro) 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.banner img {
+  max-width: 90%;
+}

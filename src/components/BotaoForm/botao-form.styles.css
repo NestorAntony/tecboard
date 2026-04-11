@@ -1,0 +1,13 @@
+.botaoForm {
+    padding: 8px 16px;
+    background-color: #17D9B1;
+
+    width:128px;
+    height: 35px;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 8px;
+}
