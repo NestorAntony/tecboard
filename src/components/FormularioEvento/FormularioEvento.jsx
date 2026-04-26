@@ -10,9 +10,26 @@ import CampoOption from '../CampoOption';
 
 import BotaoForm from '../BotaoForm';
 
-export default function FormularioEvento() {
+export default function FormularioEvento( {temas} ) {
+
+  function handleSubmit (formData) {
+    const index = Number( formData.get('event-type') ) -1 ;
+
+    const evento = {
+      capa: formData.get('endImage'),
+      tema: temas[index],
+      data: new Date( formData.get('data') ),
+      titulo: formData.get('nomeEvento')
+    }
+
+    console.log("testando: ",evento);
+
+    console.log("outro: ",evento.tema.id);
+
+  }
+
     return (
-      <form className="form-evento">
+      <form className="form-evento" action={handleSubmit}>
         <TituloForm className="titulo-form">
           Preencha para criar um Evento:
         </TituloForm>
@@ -22,6 +39,7 @@ export default function FormularioEvento() {
             <CampoLabel htmlFor="nomeEvento">Qual o nome do evento?</CampoLabel>
             <CampoInput
               id="nomeEvento"
+              name="nomeEvento"
               type="text"
               placeholder="Summer dev hits"
               required
@@ -29,20 +47,35 @@ export default function FormularioEvento() {
           </CampoFormulario>
 
           <CampoFormulario>
+            <CampoLabel htmlFor="endImage">Qual o endereço da imagem da capa?</CampoLabel>
+            <CampoInput 
+            id="endImage"
+            name="endImage"
+            type="text" 
+            placeholder="https://..."
+            required />
+            
+          </CampoFormulario>
+
+          <CampoFormulario>
             <CampoLabel htmlFor="data" className="label">
               Data do evento
             </CampoLabel>
-            <CampoInput id="data" type="date" required />
+            <CampoInput id="data" name="data" type="date" required />
           </CampoFormulario>
 
           <CampoFormulario>
             <CampoLabel htmlFor="event-type">Tema do evento</CampoLabel>
 
             <CampoSelect name="event-type" id="event-type">
-              <CampoOption value="casamento">Casamento</CampoOption>
-              <CampoOption value="campeonato" selected>
-                Campeonatoooo
-              </CampoOption>
+              <CampoOption selected>Selecione uma opcao</CampoOption>
+              {temas.map((item) => {
+                return (
+                  <CampoOption value={item.id}>
+                    {item.tema}
+                  </CampoOption>
+                )
+              })}
             </CampoSelect>
           </CampoFormulario>
         </div>

@@ -1,0 +1,45 @@
+.card {
+    background-color: #212121;
+    
+    height: 478px;
+    width: 282px;
+
+    margin: 16px;
+}
+
+.card img {
+    height: 237px;
+    width: 100%;
+}
+
+.corpo p,
+.corpo h2 {
+    margin: 0;
+}
+
+.corpo{
+    padding: 24px 16px;
+
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    gap: 8px;
+}
+
+.corpo h2{
+    font-family: var(--font-titulo);
+}
+
+.tag {
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #4A4949;
+
+    border-radius: 4px;
+
+    /* display: inline-block; */
+    padding: 8px;
+
+}
