@@ -26,3 +26,11 @@ header {
 .banner img {
   max-width: 90%;
 }
+
+.grid {
+    display: flex;
+    flex-wrap: nowrap;
+    
+    width: 1000px;
+    max-width: 90%;
+}

@@ -10,7 +10,7 @@ import CampoOption from '../CampoOption';
 
 import BotaoForm from '../BotaoForm';
 
-export default function FormularioEvento( {temas} ) {
+export default function FormularioEvento( {temas, aoSubmeter} ) {
 
   function handleSubmit (formData) {
     const index = Number( formData.get('event-type') ) -1 ;
@@ -22,9 +22,7 @@ export default function FormularioEvento( {temas} ) {
       titulo: formData.get('nomeEvento')
     }
 
-    console.log("testando: ",evento);
-
-    console.log("outro: ",evento.tema.id);
+    aoSubmeter(evento);
 
   }
 

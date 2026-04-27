@@ -1,9 +1,9 @@
 import './card-evento.styles.css';
 
-export default function CardEvento( {evento} ) {
+export default function CardEvento( {evento, className=''} ) {
     
     return (
-        <div className='card'>
+        <div className={`card ${className}`}>
             <img src={evento.capa} alt={evento.titulo} />
             <div className='corpo'>
                 <p className='tag'>
